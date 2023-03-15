@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 
-# set up email variables
+# Set up email variables
 sender_email = 'ABC@gmail.com'
 # Add a list of HR e-mails here
 recipient_list = ['DEF@gmail.com']
@@ -18,19 +18,19 @@ message2="מצורף בזאת קורות החיים שלי,בתוכם ניתן �
 message3="!תודה רבה על ההזדמנות"
 finalmessage=message+" "+"\n"+"."+message2+"\n"+message3
 
-# create email message object
+# Create email message object
 msg = MIMEMultipart()
 msg['From'] = sender_email
 msg['Subject'] = subject
 msg.attach(MIMEText(finalmessage, 'plain'))
 
-# create email server object
+# Create email server object
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 server.login(sender_email, password) 
 
 for receiver_email in recipient_list:
-    # create email message object and attach file
+    # Create email message object and attach file
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg.add_header('To', receiver_email) # use add_header method instead
@@ -41,9 +41,9 @@ for receiver_email in recipient_list:
         attachment_file.add_header('Content-Disposition', 'attachment', filename=basename(file_path))
         msg.attach(attachment_file)
 
-    # send email
+    # Send email
     server.send_message(msg)
     time.sleep(4)  # add a delay to avoid being flagged as spam
 
-# close server connection
+# Close server connection
 server.quit()
