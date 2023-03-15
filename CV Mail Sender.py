@@ -6,10 +6,11 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 
 # set up email variables
-sender_email = 'netanel8491@gmail.com'
-# set a list of HR mails
-recipient_list = ['ccsaa0248@gmail.com']
-password = 'jcmsautvrensxjkk'
+sender_email = 'ABC@gmail.com'
+# Add a list of HR e-mails here
+recipient_list = ['DEF@gmail.com']
+# If you need help inserting your Google app password, please check out this guide: "https://support.google.com/accounts/answer/185833?hl=en"
+password = 'XXX'
 subject = "קורות חיים למשרת סטודנט"
 file_path = 'C:/Users/User/OneDrive - Holon Institute of Technology/מסמכים/Visual Studio 2022/Netanel Zohar-CV.docx'
 message =  " שלום! קוראים לי נתנאל זהר ,בן 24 , סטודנט במהלך השנה השניה , לומד מדעי המחשב במכון הטכנולוגי חולון,אני מחפש מקום שאוכל להשתקע, ללמוד ולתרום בו באופן האופטימלי ביותר"
